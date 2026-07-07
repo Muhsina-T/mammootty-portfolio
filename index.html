@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mammootty Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0d0d0d;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+url("images/bg.jpg");
+background-size:cover;
+background-position:center;
+position:relative;
+}
+
+/* Navbar */
+
+nav{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:38px;
+font-family:'Cinzel',serif;
+font-weight:700;
+color:#d4af37;
+letter-spacing:3px;
+}
+
+nav ul{
+display:flex;
+gap:45px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:17px;
+transition:.4s;
+}
+
+nav ul li a:hover{
+color:#d4af37;
+}
+
+/* Hero Content */
+
+.hero-content{
+position:absolute;
+top:50%;
+left:8%;
+transform:translateY(-50%);
+max-width:600px;
+}
+
+.hero-content h3{
+color:#d4af37;
+letter-spacing:4px;
+font-size:22px;
+margin-bottom:15px;
+}
+
+.hero-content h1{
+font-family:'Cinzel',serif;
+font-size:78px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:18px;
+line-height:1.8;
+color:#ddd;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#d4af37;
+color:#111;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 30px rgba(212,175,55,.4);
+}
+
+/* Actor */
+
+.actor{
+position:absolute;
+right:6%;
+bottom:0;
+}
+
+.actor img{
+height:70vh;
+filter:drop-shadow(0 20px 40px rgba(0,0,0,.8));
+}
+
+/* Biography */
+
+.about{
+padding:100px 8%;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:70px;
+background:#151515;
+flex-wrap:wrap;
+}
+
+.about-img{
+width:430px;
+height:560px;
+overflow:hidden;
+border-radius:220px 220px 0 0;
+}
+
+.about-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:1s;
+}
+
+.about-img:hover img{
+transform:scale(1.08);
+}
+
+.about-text{
+max-width:650px;
+}
+
+.about-text h2{
+font-family:'Cinzel',serif;
+font-size:55px;
+color:#d4af37;
+margin-bottom:25px;
+}
+
+.about-text p{
+font-size:18px;
+line-height:1.9;
+color:#ddd;
+margin-bottom:20px;
+}
+
+.stats{
+display:flex;
+gap:40px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat h3{
+font-size:40px;
+color:#d4af37;
+}
+
+.stat p{
+margin-top:8px;
+font-size:16px;
+}
+
+/* Footer */
+
+footer{
+background:#090909;
+padding:70px 8% 25px;
+}
+
+.footer-top{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-logo h2{
+font-family:'Cinzel',serif;
+font-size:42px;
+color:#d4af37;
+margin-bottom:15px;
+}
+
+.footer-logo p{
+max-width:420px;
+line-height:1.8;
+color:#bbb;
+}
+
+.footer-links h3,
+.footer-social h3{
+color:#d4af37;
+margin-bottom:20px;
+font-size:24px;
+}
+
+.footer-links a{
+display:block;
+text-decoration:none;
+color:#ccc;
+margin-bottom:12px;
+transition:.3s;
+}
+
+.footer-links a:hover{
+color:#d4af37;
+padding-left:8px;
+}
+
+.social-icons{
+display:flex;
+gap:18px;
+}
+
+.social-icons a{
+width:50px;
+height:50px;
+background:#1b1b1b;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#d4af37;
+font-size:22px;
+text-decoration:none;
+transition:.4s;
+}
+
+.social-icons a:hover{
+background:#d4af37;
+color:#111;
+transform:translateY(-5px);
+}
+
+.footer-bottom{
+margin-top:60px;
+padding-top:20px;
+border-top:1px solid #333;
+text-align:center;
+color:#aaa;
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+.hero-content{
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+width:90%;
+}
+
+.actor{
+opacity:.25;
+right:0;
+}
+
+.actor img{
+height:80vh;
+}
+
+nav ul{
+display:none;
+}
+
+.about{
+text-align:center;
+}
+
+.about-img{
+width:100%;
+max-width:400px;
+}
+
+.stats{
+justify-content:center;
+}
+
+.footer-top{
+text-align:center;
+justify-content:center;
+}
+
+.social-icons{
+justify-content:center;
+}
+
+}
+
+</style>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<nav>
+
+<div class="logo">MAMMOOTTY</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Biography</a></li>
+<li><a href="#">Awards</a></li>
+<li><a href="#">Gallery</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+</nav>
+
+<div class="hero-content">
+
+<h3>INDIAN FILM ICON</h3>
+
+<h1>Mammootty</h1>
+
+<p>
+A legendary actor celebrated for his remarkable performances,
+versatility, and decades-long contribution to Indian cinema.
+His dedication to storytelling continues to inspire audiences
+across generations.
+</p>
+
+<a href="#" class="btn">Explore Journey</a>
+
+</div>
+
+<div class="actor">
+<img src="images/image3.jpeg" alt="Mammootty">
+</div>
+
+</section>
+
+<section class="about">
+
+<div class="about-img">
+<img src="images/image2.jpeg" alt="Mammootty">
+</div>
+
+<div class="about-text">
+
+<h2>Biography</h2>
+
+<p>
+Mammootty is one of the most respected actors in Indian cinema,
+known for his extraordinary range, charismatic screen presence,
+and dedication to the craft of acting. His remarkable career
+spans decades with acclaimed performances across multiple languages.
+</p>
+
+<p>
+With numerous prestigious awards and unforgettable roles,
+he has become a defining figure in Malayalam cinema while
+earning admiration from audiences worldwide.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<h3>400+</h3>
+<p>Films</p>
+</div>
+
+<div class="stat">
+<h3>50+</h3>
+<p>Years</p>
+</div>
+
+<div class="stat">
+<h3>3</h3>
+<p>National Awards</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-top">
+
+<div class="footer-logo">
+
+<h2>Mammootty</h2>
+
+<p>
+Celebrating an extraordinary cinematic journey that continues
+to inspire millions through timeless performances and unforgettable characters.
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Quick Links</h3>
+
+<a href="#">Home</a>
+<a href="#">Biography</a>
+<a href="#">Awards</a>
+<a href="#">Gallery</a>
+
+</div>
+
+<div class="footer-social">
+
+<h3>Follow</h3>
+
+<div class="social-icons">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-x-twitter"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 Mammootty Portfolio. Designed for educational purposes.
+
+</div>
+
+</footer>
+
+</body>
+</html>
